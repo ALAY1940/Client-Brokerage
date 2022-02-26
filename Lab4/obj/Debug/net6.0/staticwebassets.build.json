@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "Hash": "5vV5tDhHiLWXL5yOCEAT6jyQWFtDHHvZme78wJg8Va4=",
+  "Source": "Lab4",
+  "BasePath": "_content/Lab4",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "Lab4\\wwwroot",
+      "Source": "Lab4",
+      "ContentRoot": "C:\\Users\\Alay\\source\\repos\\Lab4\\Lab4\\wwwroot\\",
+      "BasePath": "_content/Lab4",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\Alay\\source\\repos\\Lab4\\Lab4\\wwwroot\\bootstrap.min.css",
+      "SourceId": "Lab4",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Alay\\source\\repos\\Lab4\\Lab4\\wwwroot\\",
+      "BasePath": "_content/Lab4",
+      "RelativePath": "bootstrap.min.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\bootstrap.min.css"
+    },
+    {
+      "Identity": "C:\\Users\\Alay\\source\\repos\\Lab4\\Lab4\\wwwroot\\site.css",
+      "SourceId": "Lab4",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Alay\\source\\repos\\Lab4\\Lab4\\wwwroot\\",
+      "BasePath": "_content/Lab4",
+      "RelativePath": "site.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\site.css"
+    }
+  ]
+}
