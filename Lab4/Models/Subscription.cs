@@ -14,6 +14,6 @@ namespace Lab4.Models
 
         public Client Client { get; set; }
 
-        public Brokerage Brokerages { get; set; }
+        public Brokerage Brokerage { get; set; }
     }
 }

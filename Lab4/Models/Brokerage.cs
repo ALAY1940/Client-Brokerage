@@ -12,7 +12,7 @@ namespace Lab4.Models
         [Required]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Display(Name = "Registration Number")]
-        public string Id { get; set; }
+        public string ID { get; set; }
 
         [Required]
         [StringLength(50, MinimumLength = 3)]
@@ -22,6 +22,6 @@ namespace Lab4.Models
         [Column(TypeName = "money")]
         public decimal Fee { get; set; }
 
-        public ICollection <Subscription> Subscriptions { get; set; }
+        public ICollection<Subscription> Subscriptions { get; set; }
     }
 }

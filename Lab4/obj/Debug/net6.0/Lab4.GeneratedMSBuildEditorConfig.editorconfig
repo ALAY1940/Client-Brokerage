@@ -15,6 +15,18 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Alay\source\repos\Lab4\Lab4
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Alay/source/repos/Lab4/Lab4/Views/Advertisements/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWR2ZXJ0aXNlbWVudHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Alay/source/repos/Lab4/Lab4/Views/Advertisements/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWR2ZXJ0aXNlbWVudHNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Alay/source/repos/Lab4/Lab4/Views/Advertisements/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWR2ZXJ0aXNlbWVudHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Alay/source/repos/Lab4/Lab4/Views/Brokerages/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJva2VyYWdlc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -49,6 +61,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Alay/source/repos/Lab4/Lab4/Views/Clients/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50c1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Alay/source/repos/Lab4/Lab4/Views/Clients/EditSubscriptions.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50c1xFZGl0U3Vic2NyaXB0aW9ucy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Alay/source/repos/Lab4/Lab4/Views/Clients/Index.cshtml]

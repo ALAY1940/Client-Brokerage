@@ -2,7 +2,11 @@
   "dependencies": {
     "mssql1": {
       "restored": true,
-      "restoreTime": "2022-02-26T04:46:39.0335794Z"
+      "restoreTime": "2022-04-16T04:39:19.8704344Z"
+    },
+    "storage1": {
+      "restored": true,
+      "restoreTime": "2022-04-16T04:35:59.9947336Z"
     }
   },
   "parameters": {
@@ -15,6 +19,16 @@
       "Name": "mssql1.resourceGroupName",
       "Type": "resourceGroup",
       "Value": "AlaykumarLab4"
+    },
+    "storage1.resourceGroupName": {
+      "Name": "storage1.resourceGroupName",
+      "Type": "resourceGroup",
+      "Value": "AlaykumarLab5"
+    },
+    "storage1.subscriptionId": {
+      "Name": "storage1.subscriptionId",
+      "Type": "subscription",
+      "Value": "408d7ed5-150a-4430-864c-610781dd4650"
     }
   }
 }

@@ -1,4 +1,5 @@
-﻿/*!
+﻿
+﻿ /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
  * Copyright 2011-2019 Twitter, Inc.
@@ -58,7 +59,7 @@ body {
     line-height: 1.5;
     color: #212529;
     text-align: left;
-    background-color: #fff
+    background-color: #ffc107
 }
 
 [tabindex="-1"]:focus {
@@ -73,7 +74,8 @@ hr {
 
 h1, h2, h3, h4, h5, h6 {
     margin-top: 0;
-    margin-bottom: .5rem
+    margin-bottom: .5rem ;
+    background-color: #ffc107
 }
 
 p {
@@ -145,7 +147,9 @@ sup {
 a {
     color: #007bff;
     text-decoration: none;
-    background-color: transparent
+    background-color: transparent;
+    font-family: "Lucida Console", monospace;
+    
 }
 
     a:hover {
@@ -326,7 +330,7 @@ template {
     display: none !important
 }
 
-.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6, h7 {
     margin-bottom: .5rem;
     font-weight: 500;
     line-height: 1.2
@@ -337,7 +341,7 @@ template {
 }
 
 .h2, h2 {
-    font-size: 2rem
+    font-size: 1rem
 }
 
 .h3, h3 {
@@ -353,6 +357,9 @@ template {
 }
 
 .h6, h6 {
+    font-size: 1rem
+}
+.h7, h7 {
     font-size: 1rem
 }
 
@@ -6978,7 +6985,7 @@ a.bg-dark:focus, a.bg-dark:hover, button.bg-dark:focus, button.bg-dark:hover {
 }
 
 .flex-grow-1 {
-    -ms-flex-positive: 1 !important;
+        -ms-flex-positive: 1 !important;
     flex-grow: 1 !important
 }
 
@@ -10156,4 +10163,3 @@ a.text-dark:focus, a.text-dark:hover {
         border-color: #dee2e6
     }
 }
-/*# sourceMappingURL=bootstrap.min.css.map */

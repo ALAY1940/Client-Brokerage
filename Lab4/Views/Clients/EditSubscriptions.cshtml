@@ -1,0 +1,44 @@
+﻿@model Lab4.Models.ViewModels.BrokerageViewModel
+@{
+    ViewData["Title"] = "EditSubscriptions";
+}
+
+<h1>Edit</h1>
+<h4>Client</h4>
+<hr />
+<form asp-action="EditSubscriptions">
+    <table class="table">
+        <tr>
+            <th>
+                Full Name &nbsp;
+            </th>
+            <th>
+                @Model.Clients.First().FullName
+            </th>
+        </tr>
+    </table>
+    <hr />
+    <table class="table">
+        @foreach(var item in Model.Brokerages)
+        {
+            bool isValid = Model.Subscriptions.Where(brokerage => brokerage.BrokerageId == item.ID).Count() > 0;
+                if (!isValid)
+                {
+                    <tr>
+                        <td>@item.Title &nbsp;</td>
+                        <td><a asp-action="AddSubscriptions" asp-route-id="@Model.Clients.First().ID" asp-route-brokerageId="@item.ID">Register</a></td>
+                    </tr>
+                }
+                else
+                {
+                    <tr>
+                        <td>@item.Title &nbsp;</td>
+                        <td><a asp-action="DeleteSubscriptions" asp-route-id="@Model.Clients.First().ID" asp-route-brokerageId="@item.ID">Unregister</a></td>
+                    </tr>
+                }
+        }
+    </table>
+</form>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

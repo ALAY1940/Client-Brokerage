@@ -16,15 +16,19 @@ namespace Lab4.Data
 
         public DbSet<Client> Clients { get; set; }
         public DbSet<Brokerage> Brokerages { get; set; }
+        public DbSet<Advertisement> Advertisements { get; set; }
 
         public DbSet<Subscription> Subscriptions { get; set; }
+        public DbSet<AdvertisementBrokerage> AdvertisementBrokerages { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Client>().ToTable("Client");
             modelBuilder.Entity<Brokerage>().ToTable("Brokerage");
-            modelBuilder.Entity<Subscription>().ToTable("Subscription");
+            modelBuilder.Entity<Subscription>().ToTable("Subscriptiom");
+            modelBuilder.Entity<Advertisement>().ToTable("Advertisement");
+            modelBuilder.Entity<AdvertisementBrokerage>().ToTable("AdvertisementBrokerage");
 
             modelBuilder.Entity<Subscription>()
                 .HasKey(c => new { c.ClientId, c.BrokerageId });

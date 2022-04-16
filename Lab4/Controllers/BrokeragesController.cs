@@ -38,7 +38,7 @@ namespace Lab4.Controllers
                 viewModel.Subscriptions = _context.Brokerages
                     .Include(i => i.Subscriptions)
                     .Include("Subscriptions.Client").ToList()
-                    .Find(i => i.Id == ID).Subscriptions;
+                    .Find(i => i.ID == ID).Subscriptions;
             }
 
             return View(viewModel);
@@ -53,7 +53,7 @@ namespace Lab4.Controllers
             }
 
             var brokerage = await _context.Brokerages
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.ID == id);
             if (brokerage == null)
             {
                 return NotFound();
@@ -73,7 +73,7 @@ namespace Lab4.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,Fee")] Brokerage brokerage)
+        public async Task<IActionResult> Create([Bind("ID,Title,Fee")] Brokerage brokerage)
         {
             if (ModelState.IsValid)
             {
@@ -107,7 +107,7 @@ namespace Lab4.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(string id, [Bind("Id,Title,Fee")] Brokerage brokerage)
         {
-            if (id != brokerage.Id)
+            if (id != brokerage.ID)
             {
                 return NotFound();
             }
@@ -121,7 +121,7 @@ namespace Lab4.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!BrokerageExists(brokerage.Id))
+                    if (!BrokerageExists(brokerage.ID))
                     {
                         return NotFound();
                     }
@@ -144,7 +144,7 @@ namespace Lab4.Controllers
             }
 
             var brokerage = await _context.Brokerages
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.ID == id);
             if (brokerage == null)
             {
                 return NotFound();
@@ -166,7 +166,7 @@ namespace Lab4.Controllers
 
         private bool BrokerageExists(string id)
         {
-            return _context.Brokerages.Any(e => e.Id == id);
+            return _context.Brokerages.Any(e => e.ID == id);
         }
     }
 }

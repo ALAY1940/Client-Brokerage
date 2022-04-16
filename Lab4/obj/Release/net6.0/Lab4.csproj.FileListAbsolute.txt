@@ -280,3 +280,17 @@ C:\Users\Alay\source\repos\Lab4\Lab4\obj\Release\net6.0\refint\Lab4.dll
 C:\Users\Alay\source\repos\Lab4\Lab4\obj\Release\net6.0\Lab4.pdb
 C:\Users\Alay\source\repos\Lab4\Lab4\obj\Release\net6.0\Lab4.genruntimeconfig.cache
 C:\Users\Alay\source\repos\Lab4\Lab4\obj\Release\net6.0\ref\Lab4.dll
+C:\Users\Alay\source\repos\Lab4\Lab4\bin\Release\net6.0\libman.json
+C:\Users\Alay\source\repos\Lab4\Lab4\bin\Release\net6.0\Azure.Core.dll
+C:\Users\Alay\source\repos\Lab4\Lab4\bin\Release\net6.0\Azure.Identity.dll
+C:\Users\Alay\source\repos\Lab4\Lab4\bin\Release\net6.0\Azure.Storage.Blobs.dll
+C:\Users\Alay\source\repos\Lab4\Lab4\bin\Release\net6.0\Azure.Storage.Common.dll
+C:\Users\Alay\source\repos\Lab4\Lab4\bin\Release\net6.0\Azure.Storage.Files.Shares.dll
+C:\Users\Alay\source\repos\Lab4\Lab4\bin\Release\net6.0\Azure.Storage.Queues.dll
+C:\Users\Alay\source\repos\Lab4\Lab4\bin\Release\net6.0\Microsoft.Azure.Functions.Extensions.dll
+C:\Users\Alay\source\repos\Lab4\Lab4\bin\Release\net6.0\Microsoft.Azure.WebJobs.Host.dll
+C:\Users\Alay\source\repos\Lab4\Lab4\bin\Release\net6.0\Microsoft.Azure.WebJobs.dll
+C:\Users\Alay\source\repos\Lab4\Lab4\bin\Release\net6.0\Microsoft.Extensions.Azure.dll
+C:\Users\Alay\source\repos\Lab4\Lab4\bin\Release\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\Alay\source\repos\Lab4\Lab4\bin\Release\net6.0\System.IO.Hashing.dll
+C:\Users\Alay\source\repos\Lab4\Lab4\bin\Release\net6.0\System.Memory.Data.dll

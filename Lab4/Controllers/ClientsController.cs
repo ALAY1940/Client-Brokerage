@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Lab4.Data;
 using Lab4.Models;
+using Lab4.Models.ViewModels;
 
 namespace Lab4.Controllers
 {
@@ -19,13 +20,76 @@ namespace Lab4.Controllers
             _context = context;
         }
 
-        // GET: Clients
-        public async Task<IActionResult> Index()
+        [HttpGet]
+        public async Task<IActionResult> Index(int? id)
         {
-            return View(await _context.Clients.ToListAsync());
+            var clientViewModel = new BrokerageViewModel();
+            clientViewModel.Clients = await _context.Clients
+                .Include(client => client.Subscriptions)
+                .ThenInclude(client => client.Brokerage)
+                .AsNoTracking()
+                .ToListAsync();
+
+            if (id != null)
+            {
+                ViewData["ClientID"] = id;
+                clientViewModel.Subscriptions = clientViewModel.Clients.Where(client => client.ID == id).Single().Subscriptions;
+            }
+
+            return View(clientViewModel);
         }
 
-        // GET: Clients/Details/5
+        public async Task<IActionResult> EditSubscriptions(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            BrokerageViewModel clientViewModel = new BrokerageViewModel();
+            clientViewModel.Subscriptions = await _context.Subscriptions.Where(brokerageMember => brokerageMember.ClientId == id).ToListAsync();
+            clientViewModel.Clients = await _context.Clients.Where(client => client.ID == id).ToListAsync();
+            clientViewModel.Brokerages = await _context.Brokerages.ToListAsync();
+            return View(clientViewModel);
+        }
+
+        public async Task<IActionResult> AddSubscriptions(int? id, string brokerageId)
+        {
+            if (id == null || String.IsNullOrEmpty(brokerageId))
+            {
+                return NotFound();
+            }
+            var s = await _context.Clients.FindAsync(id);
+            var c = await _context.Brokerages.FindAsync(brokerageId);
+            if (s == null || c == null)
+            {
+                return NotFound();
+            }
+            var createBrokerageSubscription = new Subscription();
+            createBrokerageSubscription.ClientId = (int)id;
+            createBrokerageSubscription.BrokerageId = brokerageId;
+            _context.Subscriptions.Add(createBrokerageSubscription);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("EditSubscriptions", new { id = id });
+        }
+
+        public async Task<IActionResult> DeleteSubscriptions(int? id, string brokerageId)
+        {
+            if (id == null || String.IsNullOrEmpty(brokerageId))
+            {
+                return NotFound();
+            }
+            var brokerage = await _context.Subscriptions.FindAsync(id, brokerageId);
+            if (brokerage == null)
+            {
+                return NotFound();
+            }
+            _context.Subscriptions.Remove(brokerage);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("EditSubscriptions", new { id = id });
+        }
+
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -33,7 +97,7 @@ namespace Lab4.Controllers
                 return NotFound();
             }
 
-            var client = await _context.Clients
+            var client= await _context.Clients
                 .FirstOrDefaultAsync(m => m.ID == id);
             if (client == null)
             {
@@ -43,15 +107,11 @@ namespace Lab4.Controllers
             return View(client);
         }
 
-        // GET: Clients/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Clients/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("ID,LastName,FirstName,BirthDate")] Client client)
@@ -65,7 +125,7 @@ namespace Lab4.Controllers
             return View(client);
         }
 
-        // GET: Clients/Edit/5
+
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -81,9 +141,6 @@ namespace Lab4.Controllers
             return View(client);
         }
 
-        // POST: Clients/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("ID,LastName,FirstName,BirthDate")] Client client)
@@ -116,7 +173,6 @@ namespace Lab4.Controllers
             return View(client);
         }
 
-        // GET: Clients/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -134,7 +190,6 @@ namespace Lab4.Controllers
             return View(client);
         }
 
-        // POST: Clients/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

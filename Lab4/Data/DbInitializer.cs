@@ -33,9 +33,9 @@ namespace Lab4.Data
 
             var brokerages = new Brokerage[]
             {
-            new Brokerage{Id="A1",Title="Alpha",Fee=300},
-            new Brokerage{Id="B1",Title="Beta",Fee=130},
-            new Brokerage{Id="O1",Title="Omega",Fee=390},
+            new Brokerage{ID="A1",Title="Alpha",Fee=300},
+            new Brokerage{ID="B1",Title="Beta",Fee=130},
+            new Brokerage{ID="O1",Title="Omega",Fee=390},
             };
             foreach (Brokerage c in brokerages)
             {
